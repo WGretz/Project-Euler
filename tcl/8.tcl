@@ -6,7 +6,6 @@ set biggest 0
 set i 0
 while {$i<994} {
   set current [expr [lindex $lst $i]*[lindex $lst $i+1]*[lindex $lst $i+2]*[lindex $lst $i+3]*[lindex $lst $i+4]]
-  puts $current
   if {$current > $biggest} { set biggest $current }
   incr i
 }

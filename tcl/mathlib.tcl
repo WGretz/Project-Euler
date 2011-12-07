@@ -51,3 +51,18 @@ proc is_prime {number} {
   }
   return $prime
 }
+
+proc divisors { number } {
+  set x 1
+  set factors {}
+  set half [expr $number/2.]
+  while { $x < $half } {
+    if { [expr $number%$x] == 0 } {
+      set factors [linsert $factors end $x]
+      set factors [linsert $factors end [expr $number/$x]]
+    }
+    incr x
+  }
+  return $factors
+}
+puts [divisors 10]
